@@ -1,0 +1,36 @@
+%iframe{:allow => "autoplay", :frameborder => "no", :height => "300", :scrolling => "no", :src => "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/307591917&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true", :width => "100%"}
+
+= audio_tag("alright2", class: "alright-audio")
+
+.grid-x.align-bottom
+  .cell.small-3.text-right
+    %h3
+      = link_to("Alright", "#", class: "alright-button")
+
+  .cell.small-6.text-center
+    = image_tag("https://media.giphy.com/media/9rrsbDEWA5eoBI3xoL/giphy.gif")
+
+  .cell.small-3.text-left
+    %h3
+      = link_to("Alright", "#", class: "alright-button")
+
+:javascript
+  $(function(){
+
+    const interval = setInterval(function(){
+      $(".alright-audio")[0].currentTime = 0;
+      $(".alright-audio")[0].play();
+    }, 5000);
+
+    setTimeout(function(){
+      clearInterval(interval)
+    }, 62000)
+
+    $(".alright-button").on("click", function(e) {
+      e.preventDefault();
+
+      $(".alright-audio")[0].currentTime = 0;
+      return $(".alright-audio")[0].play();
+    })
+
+  })
