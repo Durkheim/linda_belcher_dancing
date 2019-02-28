@@ -7,8 +7,10 @@ ruby '2.4.0'
 gem 'rails', '~> 5.2.2'
 # Use postgres as the database for Active Record
 gem 'pg'
-# Use Puma as the app server
-gem 'puma', '~> 3.11'
+
+
+gem "passenger"
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 gem 'foundation-rails'
@@ -49,6 +51,8 @@ gem 'bootsnap', '>= 1.1.0', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  # Use Puma as the app server
+  gem 'puma', '~> 3.11'
 end
 
 group :development do
